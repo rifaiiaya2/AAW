@@ -1,38 +1,6 @@
 import React from "react";
 //import logo from "../../image/logo.png";
 import bananabread from "../../foods/bananabread.jpg";
-import fool from "../../foods/fool.jpg";
-import fatteh from "../../foods/fatteh.jpg";
-import manakich from "../../foods/manakich.jpg";
-import kenefeh from "../../foods/kenefeh.jpg";
-import turkichknefeh from "../../foods/turkichknefeh.jpg";
-import croissant from "../../foods/croissant.jpg";
-import toast from "../../foods/toast.jpg";
-import juse from "../../foods/juse.jpg";
-import gallary_1 from "../../foods/gallary_1.jpg";
-import barbecue from "../../foods/barbecue.jpg";
-import ramen from "../../foods/ramen.jpg";
-import butter from "../../foods/butter.jpg";
-import lebBreak from "../../foods/lebBreak.jpg";
-import vegetables from "../../foods/vegetables.jpg";
-import vegsalad from "../../foods/vegsalad.jpg";
-import tunasalad from "../../foods/tunasalad.jpg";
-import sandwich from "../../foods/sandwich.jpg";
-import beetroot from "../../foods/beetroot.jpg";
-import Hotdog from "../../foods/Hotdog.jpg";
-import lasagna from "../../foods/lasagna.webp";
-import biryani from "../../foods/biryani.webp";
-import pasta from "../../foods/pasta.jpg";
-import oranges from "../../foods/oranges.jpg";
-import fries from "../../foods/fries.jpg";
-import rice from "../../foods/rice.jpg";
-import prawns from "../../foods/prawns.jpg";
-import noodles from "../../foods/noodles.jpg";
-import cheese from "../../foods/cheese.jpg";
-import burger from "../../foods/burger.jpg";
-import tacos from "../../foods/tacos.jpg";
-import tinyburger from "../../foods/tinyburger.jpg";
-import tabbouleh from "../../foods/tabbouleh.jpg";
 import kibbe from "../../foods/kibbe.jpg";
 import kibeh from "../../foods/kibeh.jpg";
 import wara2 from "../../foods/wara2.jpg";
@@ -51,7 +19,9 @@ const RestaurantMenu = () => {
       <section class="menu">
         <div class="menu-container">
           <div class="menu-head">
-            <h2>Special Food Menu</h2>
+            <NavLink to={"/"}>
+              <h2>Special Food Menu</h2>
+            </NavLink>
             <p>
               Introducing our delectable menu, filled with an array of
               mouth-watering dishes sure to satisfy any palate. From savory
@@ -85,7 +55,7 @@ const RestaurantMenu = () => {
               </div>
             </div>
 
-            <div class="food-item featured">
+            {/* <div class="food-item featured">
               <div class="food-img">
                 <img src={fool} alt="food image" />
               </div>
@@ -140,8 +110,8 @@ const RestaurantMenu = () => {
                 <p>desc</p>
                 <h3 class="food-price">$12.00</h3>
               </div>
-            </div>
-            <div class="food-item featured">
+            </div> */}
+            {/* <div class="food-item featured">
               <div class="food-img">
                 <img src={croissant} alt="food image" />
               </div>
@@ -184,8 +154,8 @@ const RestaurantMenu = () => {
                 <p>desc</p>
                 <h3 class="food-price">$3.00</h3>
               </div>
-            </div>
-
+            </div> */}
+            {/* 
             <div class="food-item today-special">
               <div class="food-img">
                 <img src={barbecue} alt="food image" />
@@ -421,9 +391,9 @@ const RestaurantMenu = () => {
                 <div class="line"></div>
                 <h3 class="food-price">$14.00</h3>
               </div>
-            </div>
+            </div> */}
 
-            <div class="food-item today-special">
+            {/* <div class="food-item today-special">
               <div class="food-img">
                 <img src={tacos} alt="food image" />
               </div>
@@ -456,7 +426,7 @@ const RestaurantMenu = () => {
                 <p>desc</p>
                 <h3 class="food-price">$3.00</h3>
               </div>
-            </div>
+            </div> */}
             <div class="food-item today-special">
               <div class="food-img">
                 <img src={kibbe} alt="food image" />

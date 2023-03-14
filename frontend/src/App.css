@@ -24,6 +24,9 @@ li {
 a {
   text-decoration: none;
 }
+.fimg {
+  width: 15%;
+}
 
 .container {
   max-width: 80%;
@@ -41,7 +44,8 @@ header {
 }
 
 .logo img {
-  width: 120px;
+  width: 90px;
+  border-radius: 20px;
 }
 
 header nav {
@@ -149,11 +153,8 @@ header ul li a:hover {
 }
 
 .text {
-
   color: rgb(76, 113, 180);
-
 }
-
 
 .home h1 {
   font-size: 80px;
@@ -232,7 +233,6 @@ button {
   width: 100%;
   height: 20vh;
   color: white;
-
 }
 
 .book .input {
@@ -270,8 +270,6 @@ input {
   font-size: 20px;
   margin-top: 30px;
 }
-
-
 
 /*--------------book--------*/
 /*--------------about--------*/
@@ -354,7 +352,6 @@ input {
   color: white;
 }
 
-
 /* .btn12 {
   margin: 50px 0 20px 50px;
 } */
@@ -384,7 +381,7 @@ input {
   position: absolute;
   top: -13%;
   right: 10%;
-  padding-top: 10%;
+  padding-top: 7%;
   color: white;
 }
 

@@ -7,7 +7,9 @@ const Contact = () => {
     <>
       <section className="contactt">
         <div className="content">
+          <NavLink to={"/"}>
           <h2>Contact Us</h2>
+          </NavLink>
           <p>
             Please feel free to contact us with any questions, comments, or
             concerns using the form below.

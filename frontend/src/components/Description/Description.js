@@ -33,14 +33,14 @@ const Description = () => {
                 and check out were so smooth and fast. Excellent customer
                 services.
               </p>
-              <div className="box flex">
+              {/* <div className="box flex">
                 <div className="img">
                   <img src={c2} alt="image" />
                 </div>
                 <div className="name">
                   <h5>CELENA KARAM</h5>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -48,45 +48,12 @@ const Room = () => {
             </div>
             <div className="box">
               <div className="img">
-                <img src={r3} alt="image" />
+                <img src={g5} alt="image" />
               </div>
               <div className="text">
                 <h3>Junior Suite </h3>
                 <p>
                   <span>$</span>190 <span>/per night</span>{" "}
-                </p>
-              </div>
-            </div>
-            <div className="box">
-              <div className="img">
-                <img src={g5} alt="image" />
-              </div>
-              <div className="text">
-                <h3>Deluxe King Room</h3>
-                <p>
-                  <span>$</span>80<span>/per night</span>{" "}
-                </p>
-              </div>
-            </div>
-            <div className="box">
-              <div className="img">
-                <img src={home3} alt="image" />
-              </div>
-              <div className="text">
-                <h3>Deluxe Double/Double Room</h3>
-                <p>
-                  <span>$</span>130<span>/per night</span>{" "}
-                </p>
-              </div>
-            </div>
-            <div className="box">
-              <div className="img">
-                <img src={g3} alt="image" />
-              </div>
-              <div className="text">
-                <h3>Junior Suite</h3>
-                <p>
-                  <span>$</span>200<span>/per night</span>{" "}
                 </p>
               </div>
             </div>
