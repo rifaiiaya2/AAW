@@ -13,6 +13,13 @@ DBCONNECTION();
 //requiring  routes
 var itemRouter = require('./routes/item');
 var categoryRouter = require('./routes/category');
+var contactRouter = require('./routes/contactus');
+var roomsRouter = require('./routes/rooms');
+var bookRouter = require('./routes/book');
+var userRouter = require('./routes/User')
+
+
+
 
 //----using modules middlewares
 var app = express();
@@ -22,20 +29,18 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/images', express.static('public/images'));
 
 //Creating middleware to use my routes
 app.use('/api/item', itemRouter);
 app.use('/api/category', categoryRouter);
+app.use('/api/contact', contactRouter);
+app.use('/api/rooms', roomsRouter);
+app.use('/api/book', bookRouter);
+app.use("/api/user", userRouter);
 
-////////////////////////////////////////////////////////
-//////////////// Connection to mongodb /////////////////
-////////////////////////////////////////////////////////
-// mongoose.connect(process.env.DB_CONNECT, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// }).then(() => {
-//     console.log("connection is success");
-//   }).catch((error) => console.log(error));
+
+
 
 
 // catch 404 and forward to error handler

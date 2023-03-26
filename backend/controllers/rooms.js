@@ -1,23 +1,16 @@
-const Model = require('../model/item');
+const Model = require('../model/rooms');
 const fs = require('fs');
 
 
 class Controller {
 
-    // get all items
-    // getAll(req, res, next) {
-    //     Model.find((err, response) => {
-    //         if (err) return next(err);
-    //         res.status(200).send({ success: true, response });
-    //     }).catch(err => res.status(400).send({ err }))
-    // }
 
     getAll(req, res, next) {
         Model.find().then(response => res.status(200).json(response))
             .catch(error => { res.status(400).send(error) })
     }
 
-    // add item
+    // add room
 
     async post(req, res, next) {
         const reqFiles = [];
@@ -27,9 +20,7 @@ class Controller {
         }
         let newPost = await new Model({
           title: req.body.title,
-          descirption: req.body.descirption,
           price: req.body.price,
-          category: req.body.category,
           image: reqFiles,
         });
         newPost.save({}, (error, response) => {
@@ -38,7 +29,7 @@ class Controller {
         });
       }
 
-    // Update item
+    // Update room
     put(req, res, next) {
         let { id } = req.params;
         let body = req.body;
@@ -50,7 +41,7 @@ class Controller {
         });
     }
 
-    //delete a item
+    //delete a room
     delete(req, res, next) {
       Model.findOneAndDelete({ _id: req.params.id }, (err, response) => {
           if (err) return next(err);

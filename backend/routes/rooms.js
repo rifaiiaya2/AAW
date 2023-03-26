@@ -1,6 +1,6 @@
 var express = require("express");
 var router = express.Router();
-var controller = require("../controllers/item");
+var controller = require("../controllers/rooms");
 
 
 var multer = require("multer");

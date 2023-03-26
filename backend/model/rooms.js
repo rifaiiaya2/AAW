@@ -6,10 +6,6 @@ const Model = new Schema({
         type: String,
         required: true,
     },
-    descirption: {
-        type: String,
-        required: true,
-    },
     price: {
         type: String,
         required: true,
@@ -18,17 +14,12 @@ const Model = new Schema({
         type: Array,
         // required: true,
       },  
-    category: {
-        type: Schema.Types.ObjectId,
-        ref: 'Category',
-    },
+
 }, {
-    collection: 'items',
+    collection: 'rooms',
     versionKey: false,
 })
 
-Model.pre(['find', 'save'], function () {
-    this.populate(['category']);
-});
 
-module.exports = mongoose.model("Item", Model);
+
+module.exports = mongoose.model("Rooms", Model);
