@@ -1,13 +1,30 @@
-import React from "react";
-import r1 from "../../image/r1.jpg";
-import r2 from "../../image/r2.jpg";
-import r3 from "../../image/r3.jpg";
-import g5 from "../../image/g5.jpg";
-import home3 from "../../image/home3.jpg";
-import g3 from "../../image/g3.jpg";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import Loadingg from "../Loading/Loading";
 
 const Room = () => {
+  const [rooms, setRooms] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  /// function to get All rooms ///
+  const GetAllRooms = async () => {
+    setLoading(true);
+    await axios
+      .get(`http://localhost:8000/api/rooms`)
+      .then((res) => {
+        if (res.status === 200) {
+          setRooms(res.data);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    GetAllRooms();
+  }, []);
+  /// function to get All rooms ///
   return (
     <>
       <section className="room top" id="room">
@@ -17,47 +34,30 @@ const Room = () => {
               <h5>RAISING COMFORT TO THE HIGHEST LEVEL</h5>
               <h2>Rooms $ Suites</h2>
             </div>
-            <div className="button">
-              <button className="btn1">
-                <NavLink to={"/AllRooms"}>VIEW ALL</NavLink>
-              </button>
-            </div>
           </div>
-          <div className="content grid">
-            <div className="box">
-              <div className="img">
-                <img src={r1} alt="image" />
-              </div>
-              <div className="text">
-                <h3>Deluxe King Room </h3>
-                <p>
-                  <span>$</span>75 <span>/per night</span>{" "}
-                </p>
-              </div>
+
+          {loading ? (
+            <Loadingg />
+          ) : (
+            <div className="content grid">
+              {rooms &&
+                rooms.map((room, index) => {
+                  return (
+                    <div className="box">
+                      <div className="img">
+                        <img src={room.image} alt="image" />
+                      </div>
+                      <div className="text">
+                        <h3> {room.title} </h3>
+                        <p>
+                          <span>$</span> {room.price} <span>/per night</span>
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
             </div>
-            <div className="box">
-              <div className="img">
-                <img src={r2} alt="image" />
-              </div>
-              <div className="text">
-                <h3>Deluxe Double/Double Room</h3>
-                <p>
-                  <span>$</span>150 <span>/per night</span>{" "}
-                </p>
-              </div>
-            </div>
-            <div className="box">
-              <div className="img">
-                <img src={g5} alt="image" />
-              </div>
-              <div className="text">
-                <h3>Junior Suite </h3>
-                <p>
-                  <span>$</span>190 <span>/per night</span>{" "}
-                </p>
-              </div>
-            </div>
-          </div>
+          )}
         </div>
       </section>
     </>

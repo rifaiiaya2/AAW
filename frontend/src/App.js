@@ -4,9 +4,12 @@ import Home from "./pages/home/Home";
 import Contact from "./components/Contact/Contact";
 import RestaurantMenu from "./components/RestaurantMenu/RestaurantMenu";
 import AllRooms from "./components/AllRooms/AllRooms";
+import { ContextBody } from './context/Context'
+
 function App() {
   return (
     <>
+    <ContextBody>
       <BrowserRouter>
         <Routes>
           <Route index path="/" element={<Home />} />
@@ -15,6 +18,8 @@ function App() {
           <Route index path="/contactus" element={<Contact />} />
         </Routes>
       </BrowserRouter>
+    </ContextBody>
+
     </>
   );
 }
