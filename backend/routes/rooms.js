@@ -38,6 +38,7 @@ var upload = multer({
 
 
 router.get("/", controller.getAll);
+router.get("/:id", controller.getbyID);
 router.post('/',upload.array("image", 4), controller.post)
 router.put("/:id", controller.put);
 router.delete("/:id", controller.delete);

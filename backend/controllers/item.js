@@ -17,6 +17,21 @@ class Controller {
             .catch(error => { res.status(400).send(error) })
     }
 
+      getItemsByCategoryId = (req, res, next) => {
+    let { id } = req.params || {};
+    Model.find({ category: id }, (err, response) => {
+      if (err) return next(err);
+      res.status(200).send({ success: true, response });
+    });
+  };
+      // get one category
+      getbyID(req, res, next) {
+        Model.findById(req.params.id ,(err, response) => {
+            if (err) return next(err);
+            res.status(200).send({ success: true, response });
+        })
+    }
+
     // add item
 
     async post(req, res, next) {
@@ -52,11 +67,16 @@ class Controller {
 
     //delete a item
     delete(req, res, next) {
-      Model.findOneAndDelete({ _id: req.params.id }, (err, response) => {
-          if (err) return next(err);
-          res.status(200).send({ success: true, response });
-      })
-  }
+      let { id } = req.params;
+      Model.findByIdAndDelete({ _id: id }, (err, response) => {
+        if (err) return next(err);
+        res.status(200).send({
+          success: true,
+          response,
+        });
+      });
+    }
+
 
 }
 const controller = new Controller();
