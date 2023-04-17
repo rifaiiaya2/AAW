@@ -22,6 +22,7 @@ const RestaurantMenu = () => {
   };
 
   useEffect(() => {
+    console.log(items);
     setItemsActive(items);
   }, [items]);
   return (
@@ -66,7 +67,7 @@ const RestaurantMenu = () => {
 
           <div className="food-items">
             {itemsActive
-              .filter((i) => i.active === true)
+              // .filter((i) => i.active === true)
               .map((item, i) => {
                 return (
                   <div key={i} className="food-item today-special">

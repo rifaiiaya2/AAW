@@ -23,6 +23,7 @@ export const ContextBody = ({ children }) => {
         axios
         .get(`http://localhost:8000/api/item`)
         .then(res => {
+            // console.log(res.data);
           setItems(res.data);
         })
         .catch(err => console.log(err));
